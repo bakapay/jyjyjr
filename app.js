@@ -172,19 +172,19 @@ if(daysJoined.toFixed(0) === "1"){
     daysz = " Days"
 }
 	
-	const authoru = new Discord.RichEmbed()
-	.setAuthor(message.author.tag, message.author.avatarURL)
-	.addField("ID", message.author.id, true)
-	.addField("Nickname", nickname, true)
-	.addField("Status", message.author.presence.status, true)
-	.addField("Game", game, true)
-	.addField("Joined", message.guild.member(message.author.id).joinedAt, true)
-	.addField("Days since joining", daysJoined.toFixed(0) + daysz, true)
-	.addField("Roles", message.guild.member(message.author.id).roles.map(r => r.name).join(", "))
-	.setFooter("Account Created")
-	.setTimestamp(message.author.createdAt)
-	.setThumbnail(message.author.avatarURL)
-	.setColor(0x070707)
+const authoru = new Discord.RichEmbed()
+.setAuthor(message.author.tag, message.author.avatarURL)
+.addField("ID", message.author.id, true)
+.addField("Nickname", nickname, true)
+.addField("Status", message.author.presence.status, true)
+.addField("Game", game, true)
+.addField("Joined", message.guild.member(message.author.id).joinedAt, true)
+.addField("Days since joining", daysJoined.toFixed(0) + daysz, true)
+.addField("Roles", message.guild.member(message.author.id).roles.map(r => r.name).join(", "))
+.setFooter("Account Created")
+.setTimestamp(message.author.createdAt)
+.setThumbnail(message.author.avatarURL)
+.setColor(0x070707)
 	
 if(message.mentions.users.size < 1) return message.channel.send(authoru)
 	
@@ -213,23 +213,21 @@ if(daysJoined2.toFixed(0) === "1"){
 } else {
     daysz1 = " Days"
 }
-
-	const useru = new Discord.RichEmbed()
-	.setAuthor(user1.tag, user1.avatarURL)
-	.addField("ID", user1.id, true)
-	.addField("Nickname", nickname2, true)
-	.addField("Status", user1.presence.status, true)
-	.addField("Game", game2, true)
-	.addField("Joined", message.guild.member(user1.id.joinedAt), true)
-	.addField("Days since joining", daysJoined2.toFixed(0) + daysz1, true)
-	.addField("Roles", message.guild.member(user1.id).roles.map(r => r.name).join(", "))
-	.setFooter("Account Created")
-	.setTimestamp(user1.createdAt)
-	.setThumbnail(user1.avatarURL)
-	.setColor(0x070707)
+const useru = new Discord.RichEmbed()
+.setAuthor(user1.tag, user1.avatarURL)
+.addField("ID", user1.id, true)
+.addField("Nickname", nickname2, true)
+.addField("Status", user1.presence.status, true)
+.addField("Game", game2, true)
+.addField("Joined", message.guild.member(user1.id.joinedAt), true)
+.addField("Days since joining", daysJoined2.toFixed(0) + daysz1, true)
+.addField("Roles", message.guild.member(user1.id).roles.map(r => r.name).join(", "))
+.setFooter("Account Created")
+.setTimestamp(user1.createdAt)
+.setThumbnail(user1.avatarURL)
+.setColor(0x070707)
 	
-	
-	message.channel.send(useru)
+message.channel.send(useru)
 }
 
 if (command === "serverinfo") {
