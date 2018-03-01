@@ -147,7 +147,6 @@ if (command === "anunt") {
 }
 
 if (command === "userinfo") {
-  const dateFormat = require('dateformat');
   let member = message.guild.member(message.author.id);
   const millisJoined = new Date().getTime() - member.joinedAt.getTime();
   const daysJoined = millisJoined / 1000 / 60 / 60 / 24;
@@ -179,7 +178,7 @@ if (command === "userinfo") {
     .addField("Nickname", nickname, true)
     .addField("Status", message.author.presence.status, true)
     .addField("Game", game, true)
-    .addField("Joined", dateFormat(message.guild.member(message.author.id).joinedAt), true)
+    .addField("Joined", message.guild.member(message.author.id).joinedAt, true)
     .addField("Days since joining", daysJoined.toFixed(0) + daysz, true)
     .addField("Roles", message.guild.member(message.author.id).roles.map(r => r.name).join(", "))
     .setFooter("Account Created")
@@ -222,7 +221,7 @@ if (command === "userinfo") {
     .addField("Nickname", nickname2, true)
     .addField("Status", user1.presence.status, true)
     .addField("Game", game2, true)
-    .addField("Joined", dateFormat(message.guild.member(user1.id).joinedAt), true)
+    .addField("Joined", message.guild.member(user1.id).joinedAt, true)
     .addField("Days since joining", daysJoined2.toFixed(0) + daysz1, true)
     .addField("Roles", message.guild.member(user1.id).roles.map(r => r.name).join(", "))
     .setFooter("Account Created")
