@@ -258,6 +258,7 @@ if (command === "serverinfo") {
       .setTimestamp(message.guild.createdAt)
       .setFooter("Server Created")
       .setColor("RANDOM")
+      .setThumbnail(icon)
           message.channel.sendEmbed(embed)
 }
 
