@@ -1,2 +1,2 @@
 worker: node app.js
-test : npm i dateformat
+test: npm i dateformat
