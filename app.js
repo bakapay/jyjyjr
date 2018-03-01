@@ -146,7 +146,7 @@ if (command === "anunt") {
     }
 }
 
-if (command === "userinfo") {
+if (command === "userinfo"){
 let member = message.guild.member(message.author.id);
 const millisJoined = new Date().getTime() - member.joinedAt.getTime();
 const daysJoined = millisJoined / 1000 / 60 / 60 / 24;
@@ -185,7 +185,6 @@ const authoru = new Discord.RichEmbed()
 .setTimestamp(message.author.createdAt)
 .setThumbnail(message.author.avatarURL)
 .setColor(0x070707)
-	
 if(message.mentions.users.size < 1) return message.channel.send(authoru)
 	
 let user1 = message.mentions.users.first();
@@ -213,6 +212,7 @@ if(daysJoined2.toFixed(0) === "1"){
 } else {
     daysz1 = " Days"
 }
+	
 const useru = new Discord.RichEmbed()
 .setAuthor(user1.tag, user1.avatarURL)
 .addField("ID", user1.id, true)
@@ -226,8 +226,7 @@ const useru = new Discord.RichEmbed()
 .setTimestamp(user1.createdAt)
 .setThumbnail(user1.avatarURL)
 .setColor(0x070707)
-	
-message.channel.send(useru)
+if(message.mentions.users.size > 1) return message.channel.send(useru)
 }
 
 if (command === "serverinfo") {
